@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-@RestController
-@RequestMapping("/greeting")
+
 public class GreetingController {
+
     private  static final String template="Hello, %s!";
     private  final AtomicLong counter=new AtomicLong();
+
 
     @GetMapping(value = {"","/","/home"})
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "world") String name){
@@ -27,7 +28,5 @@ public class GreetingController {
     public Greeting putGreeting(@PathVariable int id, @RequestParam(value = "name") String name) {
         return new Greeting(id, String.format(template, name));
     }
-
-
 
 }
