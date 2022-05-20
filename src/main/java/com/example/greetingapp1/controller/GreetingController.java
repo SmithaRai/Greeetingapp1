@@ -1,6 +1,6 @@
-package com.example.controller;
+package com.example.greetingapp1.controller;
 
-import com.example.modal.Greeting;
+import com.example.greetingapp1.modal.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -8,10 +8,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
-
     private  static final String template="Hello, %s!";
     private  final AtomicLong counter=new AtomicLong();
-
 
     @GetMapping(value = {"","/","/home"})
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "world") String name){
@@ -29,4 +27,7 @@ public class GreetingController {
     public Greeting putGreeting(@PathVariable int id, @RequestParam(value = "name") String name) {
         return new Greeting(id, String.format(template, name));
     }
+
+
+
 }

@@ -1,4 +1,5 @@
-package com.example.modal;
+package com.example.greetingapp1.modal;
+
 
 public class User {
     private String firstName;
@@ -18,5 +19,12 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        String str = (firstName != null) ? firstName + " " : "";
+        str += (lastName != null) ? lastName : "";
+        return str.trim();
     }
 }
