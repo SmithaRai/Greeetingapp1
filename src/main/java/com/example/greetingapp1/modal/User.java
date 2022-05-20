@@ -2,6 +2,8 @@ package com.example.greetingapp1.modal;
 
 
 public class User {
+
+
     private String firstName;
     private String lastName;
 
@@ -27,4 +29,6 @@ public class User {
         str += (lastName != null) ? lastName : "";
         return str.trim();
     }
+
+
 }

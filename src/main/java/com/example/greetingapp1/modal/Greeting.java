@@ -26,6 +26,8 @@ public class Greeting {
         this.id = id;
         this.message = message;
     }
-
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
 }

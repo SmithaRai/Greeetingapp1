@@ -5,5 +5,7 @@ import com.example.greetingapp1.modal.User;
 
 public interface IGreetingService {
     Greeting addGreeting(User user);
-
+    Greeting getGreetingById(Long id);
+    Greeting updateGreeting(long id,User user);
+    Greeting deleteGreeting(Long id);
 }
